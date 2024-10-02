@@ -1,0 +1,245 @@
+/* Reset body and html margins and padding */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+/* Ensure that the App component fills the entire viewport */
+.App {
+  min-height: 100vh;
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  justify-content: flex-start;
+  background-color: #282c34;
+  color: rgb(226, 231, 233);
+}
+
+.App {
+  text-align: center;
+  background-color: #282c34;
+  color: rgb(226, 231, 233);
+}
+
+.App-logo {
+  height: 40vmin;
+  background-color: #282c34;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: rgb(255, 255, 255);
+}
+
+.img-title {
+  width: '200px';
+  height: '150px';
+  color: #1a1a1a;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+/* Navbar styling */
+.navbar {
+  background-color: #333;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  width: 100%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: center;
+  height: 60px;
+  width: 100%;
+  max-width: 1300px;
+  padding: 0 20px;
+}
+
+.nav-logo {
+  color: #fff;
+  justify-self: flex-start;
+  cursor: pointer;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  text-align: center;
+  padding: 0 0 0 40px; /* change this to remove space before home and after myPortfolio*/
+}
+
+.nav-item {
+  height: 60px;
+}
+
+.nav-links {
+  color: #fff;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  padding: 0 1rem;
+  height: 100%;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.nav-links:hover {
+  background-color: #575757;
+  border-radius: 4px;
+}
+
+/* background-color: #f0f4f8; Light gray background to make content stand out */
+
+.project-card {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  background-color: rgb(226, 231, 233); /* Light gray background to make content stand out */
+  border-radius: 12px; /* Smooth rounded corners */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+  padding: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
+  justify-content: center; /* Centers the content inside the card */
+}
+
+.project-card:hover {
+  transform: translateY(-10px); /* Slight lift on hover */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Deepen shadow on hover */
+}
+
+.project-card img {
+  width: 200px;
+  height: 150px;
+  border-radius: 8px; /* Smooth the corners of the image */
+  object-fit: cover; /* Ensure the image covers the area without distortion */
+  transition: transform 0.3s ease; /* Smooth zoom effect on hover */
+}
+
+.project-card:hover img {
+  transform: scale(1.05); /* Slight zoom on hover */
+}
+
+.project-card h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  color: #1a1a1a; /* Darker text for contrast */
+  transition: color 0.3s ease;
+}
+
+.project-card p {
+  margin: 10px 0 0;
+  font-size: 1rem;
+  color: #555555; /* Softer text color for abstract */
+}
+
+.project-card:hover h2 {
+  color: #0077ff; /* Change text color to emphasize hover */
+}
+
+/* Add space between each project card */
+.projects-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Mobile view simulation */
+.mobile-view {
+  width: 375px; /* Standard mobile width */
+  max-width: 100vw; /* Prevent overflow on mobile screens */
+  margin: 0 auto; /* Center the mobile view in the desktop */
+  border: 1px solid #ccc;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.toggle-view-btn {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  z-index: 1000;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.toggle-view-btn:hover {
+  background-color: #0056b3;
+}
+
+.desktop-view {
+  width: 100%;
+}
+
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .nav-links {
+    padding: 0 0.5rem;
+  }
+
+  .navbar-container {
+    padding: 0 10px; /* Reduced padding */
+  }
+
+  .nav-menu {
+    /* flex-direction: column; */
+    align-items: center;
+    justify-content: center;
+  }
+
+  .nav-item {
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+  }
+
+  .nav-logo {
+    font-size: 1.3rem;
+  }
+}
