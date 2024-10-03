@@ -1,0 +1,74 @@
+/* Profile container to center content */
+.profile-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;  /* Full viewport height */
+  background-color: #1e1e1e;  /* Dark background for a modern look */
+  color: #e2e7e9;  /* Light text color */
+}
+
+.profile-content {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  background-color: #282c34;  /* Card-style background */
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);  /* Soft shadow for depth */
+  max-width: 900px; /* Limits width to look good on larger screens */
+}
+
+.profile-info {
+  flex: 2;
+}
+
+.profile-info h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.profile-info p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.profile-links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  flex: 1;
+}
+
+.social-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.social-icon:hover {
+  transform: scale(1.1);  /* Slight zoom on hover */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);  /* Enhance shadow on hover */
+}
+
+@media screen and (max-width: 768px) {
+  .profile-content {
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .profile-links {
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 1rem;
+  }
+
+  .social-icon {
+    width: 50px;
+    height: 50px;
+  }
+}

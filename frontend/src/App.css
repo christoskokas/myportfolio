@@ -13,19 +13,21 @@ html, body {
   text-align: center;
   flex-direction: column;
   justify-content: flex-start;
-  background-color: #282c34;
+  background-color: #1e1e1e;
   color: rgb(226, 231, 233);
 }
 
+/* #282c34 */
+
 .App {
   text-align: center;
-  background-color: #282c34;
+  background-color: #1e1e1e;
   color: rgb(226, 231, 233);
 }
 
 .App-logo {
   height: 40vmin;
-  background-color: #282c34;
+  background-color: #1e1e1e;
   pointer-events: none;
 }
 
@@ -36,7 +38,7 @@ html, body {
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: #1e1e1e;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -120,59 +122,69 @@ html, body {
 
 /* background-color: #f0f4f8; Light gray background to make content stand out */
 
+/* Project Card Styling */
 .project-card {
-  width: 100%;
   display: flex;
-  align-items: center;
-  background-color: rgb(226, 231, 233); /* Light gray background to make content stand out */
-  border-radius: 12px; /* Smooth rounded corners */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+  align-items: center; /* Ensure vertical alignment */
+  background-color: #f0f0f0;
+  border-radius: 10px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
   padding: 20px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
-  justify-content: center; /* Centers the content inside the card */
-}
-
-.project-card:hover {
-  transform: translateY(-10px); /* Slight lift on hover */
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Deepen shadow on hover */
+  margin-bottom: 30px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 100%;
+  max-width: 2000px;
+  flex-direction: row;
 }
 
 .project-card img {
   width: 200px;
-  height: 150px;
-  border-radius: 8px; /* Smooth the corners of the image */
-  object-fit: cover; /* Ensure the image covers the area without distortion */
-  transition: transform 0.3s ease; /* Smooth zoom effect on hover */
+  height: auto;
+  border-radius: 8px;
+  margin-right: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.project-card-content {
+  display: flex;
+  flex-direction: column; /* Ensure title and abstract are stacked */
+  text-align: center;
+}
+
+.project-card-content h2 {
+  margin: 0;
+  font-size: 1.6rem;
+  color: #1a1a1a;
+}
+
+.project-card-content p {
+  margin-top: 10px;
+  font-size: 1.1rem;
+  color: #555;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
 }
 
 .project-card:hover img {
-  transform: scale(1.05); /* Slight zoom on hover */
-}
-
-.project-card h2 {
-  margin: 0;
-  font-size: 1.5rem;
-  color: #1a1a1a; /* Darker text for contrast */
-  transition: color 0.3s ease;
-}
-
-.project-card p {
-  margin: 10px 0 0;
-  font-size: 1rem;
-  color: #555555; /* Softer text color for abstract */
+  transform: scale(1.05);
 }
 
 .project-card:hover h2 {
-  color: #0077ff; /* Change text color to emphasize hover */
+  color: #007bff;
 }
 
-/* Add space between each project card */
+/* Project List Styling */
 .projects-list {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 20px;
 }
+
 
 /* Mobile view simulation */
 .mobile-view {
@@ -241,5 +253,20 @@ html, body {
 
   .nav-logo {
     font-size: 1.3rem;
+  }
+
+  .project-card {
+    flex-direction: column; /* Stack image and text vertically on smaller screens */
+    padding: 15px;
+  }
+
+  .project-card img {
+    margin-right: 0;
+    margin-bottom: 15px; /* Add space between image and text */
+    width: 100%; /* Full-width image for mobile */
+  }
+
+  .project-card-content {
+    text-align: center; /* Center-align text on mobile */
   }
 }

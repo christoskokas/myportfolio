@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import ProjectDetails from './components/ProjectDetails';
+import Profile from './components/Profile';
 import './App.css'
 
 // Navbar Component
@@ -53,31 +54,23 @@ function Home() {
       <h1>My Computer Vision Projects</h1>
       <div className="projects-list">
         {projects.map(project => (
+          <Link to={`/project/${project.link}`} style={{ textDecoration: 'none', color: 'inherit' }}>
           <div 
             className="project-card" 
             key={project.id}
-            style={{ cursor: 'pointer', marginBottom: '20px', display: 'flex', alignItems: 'center' }}
           >
-            <Link to={`/project/${project.id}`} style={{ textDecoration: 'none', color: 'inherit' }}>
-              <img src={`http://127.0.0.1:5000/static/videos/${project.image}`} />
               <div>
+                <img src={`http://127.0.0.1:5000/static/videos/${project.image}`} />
+              </div>
+              <div className="project-card-content">
                 <h2>{project.title}</h2>
                 <p>{project.abstract}</p>
               </div>
-            </Link>
           </div>
+          </Link>
         ))}
       </div>
     </div>
-  );
-}
-
-function Profile() {
-  return (
-    <div className="Profile">
-      My name is Chris
-    </div>
-
   );
 }
 
@@ -104,11 +97,10 @@ function Projects() {
           <div 
             className="project-card" 
             key={project.id}
-            style={{ cursor: 'pointer', marginBottom: '20px', display: 'flex', alignItems: 'center' }}
           >
-            <Link to={`/project/${project.id}`} style={{ textDecoration: 'none', color: 'inherit' }}>
+            <Link to={`/project/${project.link}`} style={{ textDecoration: 'none', color: 'inherit' }}>
               <img src={`http://127.0.0.1:5000/static/videos/${project.image}`} />
-              <div>
+              <div className="project-card-content">
                 <h2>{project.title}</h2>
                 <p>{project.abstract}</p>
               </div>
@@ -130,10 +122,6 @@ function App() {
   
   return (
     <div className={`App`}>
-    {/* <button onClick={toggleView} className="toggle-view-btn">
-      {isMobileView ? 'Desktop' : 'Mobile'}
-    </button> */}
-
     {/* Router that controls different routes in the app */}
     <Router>
     <Navbar /> {/* Include the Navbar on all pages */}
@@ -142,7 +130,7 @@ function App() {
         <Route path="/" element={<Projects />} />
         <Route path="/projects" element={<Projects />} />
         <Route path="/profile" element={<Profile />} />
-        <Route path="/project/:id" element={<ProjectDetails />} />
+        <Route path="/project/:link" element={<ProjectDetails />} />
       </Routes>
     </Router>
   </div>
